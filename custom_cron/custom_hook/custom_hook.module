@@ -1,0 +1,8 @@
+<?php
+
+function custom_hook_mycustom_hook($list){
+	foreach ($list as $key => $value) {
+		var_dump($value);
+	}
+	exit();
+}
