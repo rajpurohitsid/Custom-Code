@@ -1,0 +1,7 @@
+site_alter.vcard:
+  path: '/vcard/{node}'
+  defaults:
+    _title: 'Vcard details'
+    _controller: '\Drupal\site_alter\Controller\VcardController::vcardFetch'
+  requirements:
+    _permission: 'access content'
