@@ -1,0 +1,5 @@
+name: Custom Services
+type: module
+description: The module provide the sample code to define  your service from  your custom module.
+package: Examples
+core_version_requirement: ^8.8.0 || ^9.0
