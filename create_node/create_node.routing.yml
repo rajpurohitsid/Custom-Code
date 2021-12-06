@@ -1,0 +1,7 @@
+create_node.data:
+  path: '/apitest2'
+  defaults:
+    _controller: '\Drupal\create_node\Controller\CreateNode::data'
+    _title: 'Export Content'
+  requirements:
+    _permission: 'access content'
