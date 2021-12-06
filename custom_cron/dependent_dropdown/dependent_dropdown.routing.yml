@@ -1,7 +1,0 @@
-dependent_dropdown.ajax_example:
-  path: '/ajax_example'
-  defaults:
-    _form: '\Drupal\dependent_dropdown\Form\DependentDropdown'
-    _title: 'Ajax Example'
-  requirements:
-    _permission: 'access content'
