@@ -1,0 +1,43 @@
+<?php
+
+function node_status_config_views_query_alter(&$view, &$query) {
+  // dump($query->where);
+  // exit;
+  if ($view->storage->id() == 'node_status_article' && $view->current_display == 'page_1') {
+    $config = \Drupal::config('node_status_config.adminsettings')->get();
+    $status = $config['node_status'];
+    $status_arr = ['pending'=>'Pending','working'=>'Working','progress'=>'Progress','done'=>'Done'];
+    // dump($status_arr[$status]);
+    // $db_query = \Drupal::database();
+    //  $db_query = $db_query->select('node__field_status', 'n');
+    //   $db_query->fields('n');
+    //  $db_query->condition('bundle', "article", "=");
+    //  $db_query->condition('field_status_value', $status, "=");
+    //  $result = $db_query->execute()->fetchAll();
+    //  dump($result);
+    //  exit;
+     // foreach ($query->where as $condition_group) {
+     // foreach ($condition_group['conditions'] as $condition) {
+        // if ($condition['field'] == 'node__field_status.field_status_value = :node__field_status_field_status_value') {
+           // $condition['value'][':node__field_status_field_status_value'] = $status_arr[$status];
+          $query->where[0]['conditions'][0] = array(
+            'field' => 'field_status_value',
+            'value' => $status_arr[$status],
+             'operator' => '=',
+          );
+         // }
+       // }
+     // }
+  }
+
+  //Filter Content using UUid of taxonomy Term.
+  if ($view->storage->id() == 'all_basic_page' && $view->current_display == 'page_1'){
+      // dump($query->where[1]['conditions'][2]['field']);
+      // exit;
+    $query->where[1]['conditions'][2] = array(
+            'field' => 'taxonomy_term_field_data_node__field_recipe__taxonomy_term_data.uuid',
+            'value' => 'dbc07db1-d412-4640-a5e0-7785eb31a674',
+             'operator' => '=',
+          );
+  }
+}
