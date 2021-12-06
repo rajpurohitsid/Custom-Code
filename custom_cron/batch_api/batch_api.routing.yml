@@ -1,7 +1,0 @@
-batch_api.form:
-  path: '/api_form'
-  defaults:
-    _form: '\Drupal\batch_api\Form\CustomBatchForm'
-    _title: 'Demo of batch processing'
-  requirements:
-    _permission: 'access content'

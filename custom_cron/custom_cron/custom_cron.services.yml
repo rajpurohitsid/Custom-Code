@@ -1,3 +1,0 @@
-services:
- custom_cron.cron_service:
-   class: Drupal\custom_cron\CustomService
