@@ -1,0 +1,5 @@
+name: Custom Autocomplete
+type: module
+description: This dispaly information what you enter your application.
+core_version_requirement: ^8.8.0 || ^9.0
+package: Custom
