@@ -1,0 +1,7 @@
+ajax_form.ajax_example:
+  path: '/ajax_example'
+  defaults:
+    _form: '\Drupal\ajax_form\Form\AjaxExampleForm'
+    _title: 'Ajax Example'
+  requirements:
+    _permission: 'access content'
